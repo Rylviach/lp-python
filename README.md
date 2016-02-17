@@ -1,3 +1,3 @@
 # Landing Page
 
-## Python Implementation
+## Python/Django Implementation
