@@ -1,1 +1,3 @@
-# lp-python
+# Landing Page
+
+## Python Implementation
