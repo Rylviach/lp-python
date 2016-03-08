@@ -14,10 +14,12 @@ Install project
 These instructions assume that you have already set up ``virtualenv`` and ``virtualenvwrapper``.
 
 1. Create a new project with Python 3 with ``mkproject -p `which python3` rylviach_site``
-2. Edit your ``.virtualenv/rylviach_site/bin/postactivate.sh`` and add these lines::
+2. Edit your ``.virtualenv/rylviach_site/bin/postactivate.sh`` and add these lines
 
-     export DJANGO_SETTINGS_MODULE=rylviach.settings.dev
-     export PYTHONPATH=$PYTHONPATH:[path to repo]/rylviach_site
+.. code-block:: bash
+
+   export DJANGO_SETTINGS_MODULE=rylviach.settings.dev
+   export PYTHONPATH=$PYTHONPATH:[path to repo]/rylviach_site
 
 3. Install the requirements with ``pip install -r requirements/dev.txt``
 
@@ -64,3 +66,7 @@ This will track/link to our GitHub repos. Depending on whether the user is logge
 Insult (or something else) API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This is mostly going to be an excuse to play with Django-Rest-Framework.
+
+License
+-------
+Please see `LICENSE <https://github.com/Rylviach/lp-python/blob/master/LICENSE.txt>`_.
