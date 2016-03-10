@@ -1,13 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic Page Needs
+    =============================================================================== -->
+    <meta charset="utf-8">
+    <title>Rylviach</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Needs
+    =============================================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS
+    =============================================================================== -->
+    {% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/skeleton.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}" />
+
+
+    <!-- Favicons
+    =============================================================================== -->
+    <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/icon-57.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/icon-72.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/icon-114.png' %}">
+
 </head>
 <body>
-{% include 'navigation.html' %}
+    <div class="band header">
+        <header class="container main">
+            <div class="twelve columns">
+                <h1 class="logo"><a href="">Rylviach</a></h1>
+            </div>
+        </header><!-- end container -->
+    </div><!-- end band -->
 
-{% block content %}
-{% endblock %}
-<footer>
-    <small>© Copyright {% now "Y" %} Rylviach</small>
-</footer>
+    <div class="band navigation">
+        <nav class="container primary">
+            <div class="row">
+                <div class="sixteen columns">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Projects</a>
+                            <ul>
+                                <li><a href="#"><span>- </span>Python Landing Page</a></li>
+                                <li><a href="#"><span>- </span>Elixir Landing Page</a></li>
+                                <li><a href="#"><span>- </span>Golang Landing Page</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Insults</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav><!-- end container -->
+    </div><!-- end band -->
+
+    <div class="band">
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div><!-- end container -->
+    </div><!-- end band -->
+
+    <div class="band footer">
+        <footer class="container main">
+            <div class="row">
+                <div class="three columns">
+                    <h3 class="logo"><a href="#">Rylviach</a></h3>
+
+                    <p>Rylviach began in 2013.</p>
+
+                    <p>Rylviach is a collaboration of pure genius and can help you with any Software Design and Engineering
+                        needs. From databases to web pages, REST APIs to custom tooling, Rylviach can meet any need.</p>
+
+                    <p>Our mission is to provide all clients with passionate, effective, professional treatment.</p>
+                </div>
+                <div class="three columns">
+                    <header>
+                        <h4>Twitter</h4>
+                    </header>
+                </div>
+                <div class="three columns">
+                    <header>
+                        <h4>Recent Posts</h4>
+                    </header>
+
+                    <ul>
+                        <li>How to do magic with Elixir</li>
+                        <li>Silvio's thoughts on everyone else in Portland with tattoos</li>
+                        <li>How much tea is too much? Zach finds out.</li>
+                    </ul>
+                </div>
+                <div class="three columns">
+                    <header>
+                        <h4>Flickr</h4>
+                    </header>
+                </div>
+            </div>
+        </footer><!-- end container -->
+    </div><!-- end band -->
+
+    <div class="band bottom">
+        <footer class="container">
+            <div class="row">
+                <div class="one-half column first-credit">
+                    <p>&copy; Copyright {% now "Y" %} <a href="#">Rylviach</a> All Rights Reserved.</p>
+                </div>
+                <div class="one-half column last-credit">
+                    <p>Powered by Django and Webdesigntuts+ - Adapted from <a href="#">Mahdi El Hanafi</a> </p>
+                </div>
+            </div>
+        </footer><!-- end container -->
+    </div><!-- end band -->
+
+    <!-- JavaScript
+    =============================================================================== -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'scripts/layout.js' %}"></script>
+
 </body>
