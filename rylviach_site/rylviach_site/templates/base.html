@@ -18,8 +18,10 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'css/skeleton.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/layout.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
 
+    {% block css %}
+    {% endblock css %}
 
     <!-- Favicons
     =============================================================================== -->
@@ -41,7 +43,7 @@
     <div class="band navigation">
         <nav class="container primary">
             <div class="row">
-                <div class="sixteen columns">
+                <div class="twelve columns">
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Blog</a></li>
@@ -64,7 +66,7 @@
     <div class="band">
         <div class="container">
             {% block content %}
-            {% endblock %}
+            {% endblock content %}
         </div><!-- end container -->
     </div><!-- end band -->
 
@@ -85,6 +87,17 @@
                     <header>
                         <h4>Twitter</h4>
                     </header>
+
+                    {% load twitter_tag %}
+                    {% load humanize %}
+                    {% get_tweets for 'StephenAtHome' as tweets exclude 'retweets, replies' limit 3 %}
+                    <div class="tweet">
+                    <ul>
+                        {% for tweet in tweets %}
+                        <li>{{ tweet.datetime|naturaltime }} - {{ tweet.html|safe }}</li>
+                        {% endfor %}
+                    </ul>
+                    </div>
                 </div>
                 <div class="three columns">
                     <header>
@@ -101,6 +114,8 @@
                     <header>
                         <h4>Flickr</h4>
                     </header>
+
+                    <div class="flickr"></div>
                 </div>
             </div>
         </footer><!-- end container -->
@@ -122,6 +137,10 @@
     <!-- JavaScript
     =============================================================================== -->
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.1.min.js"></script>
-    <script type="text/javascript" src="{% static 'scripts/layout.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scripts/jquery.flickrush.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scripts/base.js' %}"></script>
+
+    {% block javascript %}
+    {% endblock javascript %}
 
 </body>

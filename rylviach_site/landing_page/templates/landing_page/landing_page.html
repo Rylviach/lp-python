@@ -1,17 +1,160 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/landing_page/flexslider.css' %}" />
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/landing_page/landing_page.css' %}" />
+{% endblock css %}
 
 {% block content %}
 <div class="row">
     <div class="sixteen columns">
-        <p>Slider</p>
+        <div class="flexslider">
+            <ul class="slides">
+                <li>
+                    <figure>
+                        <img src="{% static 'images/landing_page/loch-nevis.jpg' %}" alt="" />
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="{% static 'images/landing_page/iceland.jpg' %}" alt="" />
+                    </figure>
+                </li>
+                <li>
+                    <figure>
+                        <img src="{% static 'images/landing_page/snow.jpg' %}" alt="" />
+                    </figure>
+                </li>
+            </ul>
+        </div>  <!-- end flexslider -->
     </div>
 </div>
 <div class="row">
-    <div class="eight columns">
+    <div class="eight columns"><!--
+        <div class="row clearfix">
+        <article>
+            <div class="four columns thumbnail">
+                <figure>
+                    <img src="{% static 'images/landing_page/thumb_iceland.jpg' %}" alt="iceland">
+                </figure>
+            </div>
+            <div class="eight columns">
+                <p class="breadcrumbs"><a href="#">Breadcrumb</a> &gt; <a href="#">trail</a></p>
+                <h2>The Evolving Role of Social Media</h2>
+                <p class="meta">Posted by <a href="#">Charlie</a> 1 hour ago <a href="#">30 Comments</a></p>
+                <p>A few years ago, news organizations were unsure about social. Journalist were apprehensive to create Twitter accounts and media companies questioned whether a branded Facebook fan page was necessary.</p>
+            </div>
+        </article>
+        </div>
+        <hr /> -->
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim dolor quis placerat pharetra. Vestibulum lorem lorem, mattis eu pretium et, pharetra non nisl. Phasellus risus justo, rutrum hendrerit tincidunt sit amet, tempus ut eros. In dapibus lacinia nibh, aliquam facilisis lorem. Fusce eleifend velit eget faucibus ultrices. Sed congue sollicitudin ultrices. Nulla in viverra elit, eget faucibus orci. Phasellus vel viverra mi, vel ultrices sapien. Fusce non ultrices metus, quis aliquet ante. Sed pellentesque interdum odio sed laoreet. Curabitur suscipit facilisis ultricies. Ut sollicitudin libero eget quam mollis imperdiet.</p>
     </div>
-    <div class="four columns">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim dolor quis placerat pharetra. Vestibulum lorem lorem, mattis eu pretium et, pharetra non nisl. Phasellus risus justo, rutrum hendrerit tincidunt sit amet, tempus ut eros. In dapibus lacinia nibh, aliquam facilisis lorem. Fusce eleifend velit eget faucibus ultrices. Sed congue sollicitudin ultrices. Nulla in viverra elit, eget faucibus orci. Phasellus vel viverra mi, vel ultrices sapien. Fusce non ultrices metus, quis aliquet ante. Sed pellentesque interdum odio sed laoreet. Curabitur suscipit facilisis ultricies. Ut sollicitudin libero eget quam mollis imperdiet.</p>
-    </div>
+    <aside class="four columns">
+
+        <div class="sub subscribe clearfix">
+            <header>
+                <h4>Subscribe</h4>
+            </header>
+            <div class="row">
+                <div class="one-half column">
+                    <span class="icon rss">&#241;</span>
+                    <p><em>12,346</em><br />
+                    subscribers</p>
+                </div>
+                <div class="one-half column">
+                    <span class="icon twitter">&#229;</span>
+                    <p><em>4,834</em><br />
+                    followers</p>
+                </div>
+            </div>
+        </div>  <!-- end subscribe -->
+
+        <div class="sub search">
+            <header>
+                <h4>Search</h4>
+            </header>
+            <form class="search clearfix">
+                <input type="search" placeholder="eg: Cheese" value="">
+                <button type="submit">Search</button>
+            </form>
+        </div>  <!-- end search -->
+
+        <div class="sub sponsors">
+            <header>
+                <h4>Sponsors</h4>
+            </header>
+        </div>  <!-- end sponsors -->
+
+        <div class="sub popular">
+            <header>
+                <h4>Most Popular</h4>
+            </header>
+            <ul class="tabs">
+                <li><a href="#popular">Popular</a></li>
+                <li><a href="#recent">Recent</a></li>
+                <li><a href="#tags">Tags</a></li>
+            </ul>
+            <ul class="tabs-content">
+                <li class="active" id="popular">The tabs are clean dna simple unordered-list markup and basic CSS.</li>
+                <li class="" id="recent">The tabs are clean dna simple unordered-list markup and basic CSS.</li>
+                <li class="" id="tags">The tabs are clean dna simple unordered-list markup and basic CSS.</li>
+            </ul>
+        </div>  <!-- end popular -->
+
+        <div class="sub news">
+            <header>
+                <h4>Rylviach News</h4>
+            </header>
+            <form class="subscribe clearfix">
+                <input type="email" placeholder="you@domain.com" value="">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>  <!-- end news -->
+
+        <div class="sub categories">
+            <header>
+                <h4>Categories</h4>
+            </header>
+            <div class="row">
+                <div class="one-half column">
+                    <ul class="categories">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+                <div class="one-half column">
+                    <ul class="categories">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Write for us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>  <!-- end categories -->
+
+        <div class="sub video">
+            <header>
+                <h4>Video of the Week</h4>
+            </header>
+            <figure>
+                <div class="embed">
+                    <iframe src="https://player.vimeo.com/video/129482491?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allFullScreen></iframe>
+                </div>
+                <figcaption>
+                    <a href="https://vimeo.com/129482491" target="_blank">Looking Glass</a> from <a href="https://vimeo.com/billnewsinger" target="_blank">Bill Newsinger</a> on <a href="https:vimeo.com">Vimeo</a>.
+                </figcaption>
+            </figure>
+        </div>  <!-- end video -->
+
+    </aside>
 </div>
-{% endblock %}
+{% endblock content %}
+
+{% block javascript %}
+<script type="text/javascript" src="{% static 'scripts/landing_page/jquery.flexslider-min.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'scripts/landing_page/landing_page.js' %}"></script>
+{% endblock javascript %}
