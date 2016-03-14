@@ -21,16 +21,38 @@
 
     hr { margin: 14px 0 28px; }
 
+    ul {list-style: none outside;}
+
     ul, ol { margin-bottom: 21px; }
     ul ul, ul ol,
     ol ol, ol ul { margin: 7px 0 7px 30px; }
     ul ul li, ul ol li,
     ol ol li, ol ul li { margin-bottom: 7px; }
     li { line-height: 21px; margin-bottom: 14px; }
-}
+
+    body { font: 14px/21px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #181818;
+        font-family: "Georgia", "Times New Roman", Helvetica, Arial, sans-serif;
+        font-weight: normal;
+    }
+
+    a, a:visited { color: #333; }
+
+    figure { margin: 0; }
 
 /* #Site Styles
 ==================================================== */
+
+@font-face{
+      font-family: 'WebSymbolsLigaRegular';
+          src: url('../fonts/websymbols/websymbolsligaregular.eot');
+          src: url('../fonts/websymbols/websymbolsligaregular.eot?#iefix') format('embedded-opentype'),
+               url('../fonts/websymbols/websymbolsligaregular.woff') format('woff'),
+               url('../fonts/websymbols/websymbolsligaregular.ttf') format('truetype'),
+               url('../fonts/websymbols/websymbolsligaregular.svg#WebSymbolsRegular') format('svg');
+}
 
 * {
     -moz-box-sizing: border-box;
@@ -68,7 +90,7 @@
 /* Headers */
 
 header.main {
-    padding: 35px 0;
+    padding: 35px 10px;
 }
 
 header h1.logo {
@@ -117,6 +139,10 @@ nav.primary ul li a {
     text-decoration: none;
     font-weight: bold;
     letter-spacing: 0.08em;
+}
+
+nav.primary div > ul > li > a {
+    font-size: 14px;
 }
 
 nav.primary ul li span {
@@ -217,7 +243,7 @@ footer.main header {
     background: url(../images/diagonal_dark.png) repeat;
     font-size: 14px;
     line-height: 1em;
-    margin: 28px 0 0;
+    margin: 28px 0;
 }
 
 footer.main h4 {
@@ -246,6 +272,27 @@ footer.main li {
     list-style-type: none;
 }
 
+footer.main li:first-child {
+    padding-top: 0px;
+}
+
+footer.main li:last-child {
+    background: none;
+}
+
+div.flickr {
+
+}
+
+div.flickr img {
+    float: left;
+    max-width: 46%;
+    margin: 2%;
+    padding: 6px;
+    border: 1px solid #ededed;
+    background: #fff;
+}
+
 /* #Media Queries
 ==================================================== */
 
@@ -263,6 +310,10 @@ footer.main li {
 
         nav.primary ul {
             display: none;
+        }
+
+        .bottom footer {
+            text-align: center;
         }
     }
 
