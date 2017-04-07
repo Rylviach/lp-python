@@ -1,0 +1,6 @@
+ratings:
+  paths:
+    - "rylviach_site"
+    - "rylviach_site/landing_page"
+    - "**.py"
+
