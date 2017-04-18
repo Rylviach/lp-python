@@ -12,15 +12,26 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 
+from django.core.exceptions import ImproperlyConfigured
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def get_env_variable(var_name):
+    """Get the environment variable or raise exception"""
+    try:
+        return os.environ[var_name]
+    except KeyError:
+        msg = 'Set the {} environment variable'.format(var_name)
+        raise ImproperlyConfigured(msg)
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'e6cw=_5!1l+(%@fktkhw%v3#8xuq85p@g!n9v%ud!jien0)f7%'
+SECRET_KEY = get_env_variable('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -34,9 +45,12 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.humanize',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'twitter_tag',
+    'landing_page',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -55,7 +69,7 @@ ROOT_URLCONF = 'rylviach_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,3 +133,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
+# Twitter setup
+
+TWITTER_OAUTH_TOKEN = get_env_variable('TWITTER_OAUTH_TOKEN')
+TWITTER_OAUTH_SECRET = get_env_variable('TWITTER_OAUTH_SECRET')
+TWITTER_CONSUMER_KEY = get_env_variable('TWITTER_CONSUMER_KEY')
+TWITTER_CONSUMER_SECRET = get_env_variable('TWITTER_CONSUMER_SECRET')
