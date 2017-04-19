@@ -52,6 +52,7 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
+rylviach/rylviach_site/static_files
 
 # Flask instance folder
 instance/
