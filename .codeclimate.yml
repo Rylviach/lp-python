@@ -1,6 +1,18 @@
+engines:
+    duplication:
+        enabled: true
+        config:
+            languages:
+            - python:
+                python_version: 3
+    pep8:
+        enabled: true
+    fixme:
+        enabled: true
 ratings:
   paths:
     - "rylviach_site"
     - "rylviach_site/landing_page"
     - "**.py"
-
+exclude_paths:
+    - "rylviach_site/static_files"
