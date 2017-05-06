@@ -3,6 +3,8 @@ Rylviach Site
 =============
 Python/Django Implementation
 
+Current version is running `here <https://lp-python-aawlsggrnu.now.sh>`_.
+
 Development Setup
 -----------------
 
